@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Girlfriend?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section id="landing" class="card landing-card" aria-live="polite">
+        <p class="eyebrow">A Tiny Note For Someone Special</p>
+        <h2>Why not open it?</h2>
+        <p class="subtitle">Enter Your Name To See The Message.</p>
+        <form id="landingForm" style="margin-top:1.4rem;">
+          <input id="recipientName" class="input-field" type="text" placeholder="Enter Your Name" aria-label="Recipient name" />
+          <div style="display:flex;justify-content:center;margin-top:1rem;">
+            <button id="startButton" class="button primary" type="submit">See Message</button>
+          </div>
+        </form>
+        <div id="shareWrap" class="share-wrap hidden" aria-hidden="true" style="margin-top:1rem; text-align:center;">
+          <input id="shareLink" class="input-field" readonly aria-label="Shareable link" />
+          <div style="display:flex;justify-content:center;margin-top:0.8rem;">
+            <button id="copyButton" class="button primary">Copy Link</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="question" class="card hidden" aria-live="polite">
+        <div class="emoji" aria-hidden="true">🌹</div>
+        <h2 id="greeting">Hey Babe 💌</h2>
+        <h3 class="question-text">Will You Be My Girlfriend?</h3>
+        <p id="statusLine" class="subtitle">Take Your Time. I Can Wait Forever.</p>
+        <div class="actions">
+          <button id="yesButton" class="button yes">Yes 💗</button>
+          <button id="noButton" class="button no">No 🙈</button>
+        </div>
+      </section>
+
+     <section id="accepted" class="card accepted-card hidden" aria-live="polite">
+        <h2 class="accepted-title">It's a Date Then!</h2>
+        <p class="accepted-subtitle">Knew You'd Say Yes</p>
+        <img
+          class="accepted-gif"
+          alt="Celebration"
+        />
+        <button id="restartButton" class="button primary">Start Over</button>
+      </section>
+    </main>
+
+    <!-- Share modal -->
+    <div id="shareModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-content">
+        <h3 id="shareTitle">Share this message</h3>
+        <p class="subtitle">Copy or open the link to share the greeting.</p>
+        <input id="modalShareLink" class="input-field" readonly aria-label="Shareable link" />
+        <div style="display:flex;justify-content:center;margin-top:0.8rem;">
+          <button id="modalCopy" class="button primary">Copy Link</button>
+        </div>
+        <div style="display:flex;justify-content:center;margin-top:0.8rem;">
+          <button id="modalClose" class="button">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
